@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="scoreboard" default="default" basedir=".">
+    <description>Builds, tests, and runs the scoreboard project.</description>
+    <property file="nbproject/private/private.properties"/>
+    <property file="nbproject/project.properties"/>
+    
+    <!-- Define the Analyze target -->
+    <target name="analyze">
+        <property name="sonar.projectKey" value="org.ghostred.scoreboard" />
+        <property name="sonar.projectName" value="Scoreboard Web Client" />
+        <property name="sonar.projectVersion" value="0.1" />
+        <property name="sonar.language" value="js" />
+        <property name="sonar.sourceEncoding" value="UTF-8" />
+        <property name="sonar.sources" value="public_html" />
+        <property name="sonar.exclusions" value="public_html/js/**/*" />
+        <taskdef name="sonar" classname="org.sonar.ant.SonarTask">
+            <classpath path="lib/sonar-ant-task-2.2.jar" />
+        </taskdef>
+        <sonar />
+    </target>
+    
+    <!-- Define the Clean target -->
+    <target name="clean">
+        <exec executable="rm">
+            <arg line="-fr build"/>
+        </exec>
+    </target>
+    
+    <!-- Define the Install Dependencies target -->
+    <target name="install">
+        <property environment="env" />
+        <exec executable="${node.path}/npm">
+            <arg line="config list"/>
+        </exec>
+        <exec executable="${node.path}/npm">
+            <arg line="install"/>
+            <env key="PATH" value="${env.PATH}:${node.path}"/>
+        </exec>
+    </target>
+    
+    <!-- Define the Test target -->
+    <target name="test">
+        <exec executable="node_modules/karma/bin/karma">
+            <arg line="start test/karma.conf.js"/>
+        </exec>
+    </target>
+    
+</project>

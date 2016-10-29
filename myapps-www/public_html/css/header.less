@@ -1,0 +1,142 @@
+@import "global.less";
+
+.header {
+    background-color: @myapps-green;
+    padding: 10px 0px 0px 10px;
+	color:#FFF;
+	height:50px;
+    .standard-text();
+    
+    #myapps-header-text {
+        font-size: 18px;
+        position: absolute;
+        float:left;
+        top:0px;
+        left:50px;
+        cursor: pointer;
+    }
+    #left-boarder {
+        border-left: 2px solid #FFF;
+        position: absolute;
+        left: 205px;
+        height: 25px;
+        top:15px;
+        cursor: pointer;
+        
+        #powered-by {
+            margin: 8px 10px 10px 6px;
+            font-size: 12px;
+            font-style: italic;
+        }
+        
+    }
+    #header-ge-img {
+        width: 35px;
+        float:left;
+        cursor: pointer;
+    }
+    
+    #header-menu-btn{
+        width: 120px;
+        color: #FFF;
+        p {
+            float:left;
+            font-size: 20px;
+            margin: 4px 0px;
+            cursor: pointer;
+        }
+        span {
+            color: #FFF;
+            font-size: 26px;
+            margin-left:10px;
+            cursor: pointer;
+        }
+    }
+    
+    #header-menu {
+        display: none;
+        position: absolute;
+        z-index: 1000;
+        right:20px;
+        top:45px;
+        width:380px;
+        background-color:@myapps-green;
+        padding:0px 0px 10px 20px;
+	    border-radius: 10px;
+	    border: 3px solid #FFF;
+
+        .menu-row {
+            text-align: center;
+            display: inline-block;
+            width:100%;
+            margin-bottom: 10px;
+            margin-top:30px;
+            
+            .menu-block {
+                float:left;
+                width:120px;
+                text-align: center;
+                cursor: pointer;
+                
+                .menu-img {
+                    text-align: center;
+                    width:60px;
+                    display: inline-block;
+                    
+                    img {
+                        display: inline-block;
+                        width: 100%;
+                        margin-bottom: 10px;
+                    }
+                }
+                
+                a {
+                    display: inline-block;
+                    width:100%;
+                    font-size: 20px;
+                }
+            }
+        }
+        
+    }
+}
+    
+
+@media screen and (max-width: 730px) {
+    #header-menu-btn{
+        width: 90px !important;
+        margin-top:5px;
+        p {
+            font-size: 20px !important;
+        }
+        span {
+            font-size: 25px !important;
+        }
+    }
+    .header #header-menu {
+        width: 325px;
+        height: 0px;
+        .menu-row .menu-block {
+            width: 100px;
+            
+            .menu-img {
+              width: 40px;
+            }
+            
+            a {
+              font-size: 16px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .header {
+        #left-boarder {
+            display: none;
+        }
+    }
+}
+
+
+    

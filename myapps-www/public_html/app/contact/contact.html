@@ -1,0 +1,75 @@
+<header></header>
+<div id="contact-page">
+
+<div id="loading">
+    <div class="sk-folding-cube">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
+    <p class="craig-brand">Sending...</p>
+</div>
+<div id="thanks">
+    <img src="img/greencheck.png"/>
+    <p class="craig-brand">Thank-you! Your Feedback Has Been Sent!</p>
+     <a ng-click="close('thanks');" class="popup-close">Close</a>
+</div>
+<div id="error">
+    <img src="img/green_error.png"/>
+    <div id="content"></div>
+    <a ng-click="close('error');" class="popup-close">Close</a>
+</div>
+    
+<div class="top-video">
+        
+    <!--First Hero Image and tagline text-->
+    <video id="header-video" autoplay muted loop>
+        <source src="img/videos/contact.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video> 
+
+    <div id="video-overlay">
+        <p id="overlay-title">Lorem Ipsum <span>Dolor</span> et neue Diginssim?</p>
+        <p id="overlay-text">Interdum et malesuada fames <span>mollis eli.</span></p>
+        <p id="contact-scroll" learn-more-scroll>Sed lacus leo</p>
+        <span class="fa fa-chevron-down" learn-more-scroll></span>
+    </div>
+
+
+</div>  
+    
+<div id="below-fold-content">
+    <div id="contact-overlay"></div>
+    <span id="learn-more-target"></span>
+    <p id="contact-header">Thank You For Your Interest!</p>
+    
+    <p id="contact-subtitle">We look forward to working with you to make something awesome!</p>
+    
+    <div id="contact-form">
+        
+        <div class="row">
+            <p class="form-title">*What Does Your Mom Call You?</p>
+            <input placeholder="Name" ng-model="cinfo.name" class="contact-input"/>
+            <p class="hint-text">Nickname, Full Name, etc</p>
+        </div>
+        
+        
+        <div class="row">
+            <p class="form-title">*Where Can We Reach You At?</p>
+            <input placeholder="SSO or Email" ng-model="cinfo.info" class="contact-input"/>
+            <p class="hint-text">Preferably your SSO or email</p>
+        </div>
+    
+        
+        <div class="row">
+            <p class="form-title">*What Can We Help You With?</p>
+            <textarea placeholder="Kind Words, Compliments, Questions, Compliants - we accept them all." ng-model="cinfo.message" class="contact-textarea"/>
+            <p class="hint-text"></p>
+        </div>
+    
+        <a id="submit-btn" ng-click="submit(cinfo)">Send It!</a>
+    </div>
+</div>
+
+</div>
